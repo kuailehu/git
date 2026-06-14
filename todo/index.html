@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo 待办清单</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>待办清单</h1>
+      <p class="subtitle">记录今天要做的事</p>
+    </header>
+
+    <main class="main">
+      <form class="input-form" id="todoForm">
+        <input
+          type="text"
+          id="todoInput"
+          class="todo-input"
+          placeholder="添加新任务，按 Enter 确认..."
+          autocomplete="off"
+          maxlength="200"
+        >
+        <button type="submit" class="btn-add" aria-label="添加任务">+</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters" role="tablist">
+          <button class="filter-btn active" data-filter="all" role="tab">全部</button>
+          <button class="filter-btn" data-filter="active" role="tab">进行中</button>
+          <button class="filter-btn" data-filter="completed" role="tab">已完成</button>
+        </div>
+        <button class="btn-clear" id="clearCompleted" hidden>清除已完成</button>
+      </div>
+
+      <ul class="todo-list" id="todoList"></ul>
+
+      <p class="empty-state" id="emptyState">
+        <span class="empty-icon">✦</span>
+        <span id="emptyMessage">还没有任务，添加一个开始吧</span>
+      </p>
+
+      <footer class="footer">
+        <span id="taskCount">0 项待办</span>
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
